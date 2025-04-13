@@ -15,7 +15,7 @@ resource "docker_image" "mysql" {
   name = "mysql:5.7"
 }
 
-resource "docker_conatiner" "mysql_1" {
+resource "docker_container" "mysql_1" {
   name = "mysql"
   image = docker_image.mysql.latest
   ports {
@@ -28,7 +28,7 @@ resource "docker_conatiner" "mysql_1" {
   ]
 }
 
-resource "docker_conatiner" "mysql_2" {
+resource "docker_container" "mysql_2" {
   name = "mysql"
   image = docker_image.mysql.latest
   ports {
