@@ -10,7 +10,7 @@ provider "docker" {}
 
 resource "docker_image" "nginx" {
   name          = "nginx:latest" 
-  keep_localy   = false
+  keep_locally   = false
 }
 
 resource "docker_container" "nginx" {
