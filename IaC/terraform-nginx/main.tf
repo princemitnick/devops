@@ -13,7 +13,7 @@ resource "docker_image" "nginx" {
   keep_localy   = false
 }
 
-resource "docker_conatiner" "nginx" {
+resource "docker_container" "nginx" {
   image = docker_image.nginx.latest
   name = "nginx-lab"
   ports {
