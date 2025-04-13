@@ -1,0 +1,23 @@
+terraform {
+  required_providers {
+    docker = {
+        source = "terraform-providers/docker"
+    }
+  }
+}
+
+provider "docker" {}
+
+resource "docker_image" "nginx" {
+  name          = "nginx:latest" 
+  keep_localy   = false
+}
+
+resource "docker_conatiner" "nginx" {
+  image = docker_image.nginx.latest
+  name = "nginx-lab"
+  ports {
+    internal = 80
+    external = 8000
+  }
+}
