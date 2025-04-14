@@ -7,14 +7,6 @@ terraform {
   }
 } 
 
-variable "mysql_env" {
-  type = object({
-    internal = 3306
-    external = 3307
-
-    })
-}
-
 provider "docker" {
   host = "unix:///var/run/docker.sock"
 }
@@ -27,8 +19,8 @@ resource "docker_container" "mysql_1" {
   name = "mysql-1"
   image = docker_image.mysql.latest
   ports {
-    internal = var.mysql_env.internal
-    external = var.mysql_env.external
+    internal = 3306
+    external = 3307
   }
   env = [
     "MYSQL_ROOT_PASSWORD=rootpassword",
@@ -49,3 +41,6 @@ resource "docker_container" "mysql_2" {
   ]
 }
 
+output "name" {
+  value = docker_container.mysql_2.ports
+}
