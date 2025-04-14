@@ -41,6 +41,12 @@ resource "docker_container" "mysql_2" {
   ]
 }
 
-output "name" {
+output "mysql_1_parameters" {
+  value = docker_container.mysql_1.ports
+  description = "mysql_1 parameters"
+}
+
+output "mysql_2_parameters" {
   value = docker_container.mysql_2.ports
+  description = "mysql_2 parameters"
 }
