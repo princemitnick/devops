@@ -8,7 +8,7 @@ terraform {
 } 
 
 variable "mysql_env" {
-  type = string({
+  type = object({
     internal = 3306
     external = 3307
 
