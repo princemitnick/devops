@@ -27,6 +27,7 @@ spec:
                   key: username
             - name: DB_PASS
               valueFrom:
+                secretKeyRef:
                   name: mysql-secret
                   key: password
             - name: DB_NAME
