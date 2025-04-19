@@ -39,7 +39,7 @@ spec:
                   name: app-config
                   key: database
           volumeMounts:
-            - name: mysql-persitent-storage
+            - name: mysql-persistent-storage
               mountPath: /var/lib/mysql
             - name: init-script
               mountPath: /docker-entrypoint-initdb.d
