@@ -10,7 +10,7 @@ resource "kubernetes_namespace" "mysql_ns" {
 
 #Secret Mysql
 
-resource "kubernetes_secret" "mysql-secret" {
+resource "kubernetes_secret" "mysql_secret" {
   metadata {
     name = "mysql-secret"
     namespace = kubernetes_namespace.mysql_ns.metadata[0].name
