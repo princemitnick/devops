@@ -16,9 +16,9 @@ resource "kubernetes_secret" "mysql_secret" {
     namespace = kubernetes_namespace.mysql_ns.metadata[0].name
   }
   data = {
-    mysql-root-password = base64decode("test")
-    mysql-user = "test"
-    mysql-password = "test"
+    mysql-root-password = base64encode("test")
+    mysql-user = base64encode("test")
+    mysql-password = base64encode("test")
   }
   type = "Opaque"
 }
@@ -28,16 +28,17 @@ resource "kubernetes_persistent_volume" "mysql_pv" {
   metadata {
     name = "mysql-pv"
   }
-  spec {
+  spec{
     capacity = {
       storage = "1Gi"
     }
-    access_modes = [ "ReadWriteOnce" ]
+    access_modes = ["ReadWriteOnce"]
     host_path {
-        path = "/mnt/data/mysql"
+      path = "/mnt/data/mysql"
     }
   }
 }
+
 
 # Persistent Volume Claim
  resource "kubernetes_persistent_volume_claim" "mysql_pvc" {
