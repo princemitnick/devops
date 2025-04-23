@@ -1,5 +1,5 @@
 provider "kubernets" {
-    config_path: "~/.kube/config"
+    config_path = "~/.kube/config"
 }
 
 resource "kubernetes_namespace" "mysql_ns" {
