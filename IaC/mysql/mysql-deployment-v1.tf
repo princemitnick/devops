@@ -33,8 +33,10 @@ resource "kubernetes_persistent_volume" "mysql_pv" {
       storage = "1Gi"
     }
     access_modes = ["ReadWriteOnce"]
-    host_path {
+    persistent_volume_source {
+      host_path {
       path = "/mnt/data/mysql"
+    }
     }
   }
 }
@@ -121,7 +123,7 @@ resource "kubernetes_persistent_volume" "mysql_pv" {
          volume {
            name = "mysql-storage"
            persistent_volume_claim {
-             claim_name = kubernetes
+             claim_name = kubernetes_persistent_volume_claim.mysql_pvc.metadata[0].name
            }
          }
        }
