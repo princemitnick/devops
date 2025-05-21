@@ -1,0 +1,20 @@
+[project]
+name = "test-poetry"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Prince stanley Jean baptiste",email = "prstanley@Princes-MacBook-Air.local"}
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "requests (>=2.32.3,<3.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "test_poetry", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

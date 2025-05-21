@@ -1,0 +1,20 @@
+[project]
+name = "logviewer"
+version = "0.1.0"
+description = "CLI tool to read log files easily"
+authors = [
+    {name = "princemitnick"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+logviewer = "logviewer.main:main"
