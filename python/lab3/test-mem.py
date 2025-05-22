@@ -2,6 +2,9 @@ import datetime
 import subprocess
 import time
 
+"""
+Author : Prince Stanley
+"""
 
 def disk_and_mem_check():
 
