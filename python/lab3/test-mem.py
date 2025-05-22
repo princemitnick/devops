@@ -4,6 +4,8 @@ import time
 
 """
 Author : Prince Stanley
+Project : Monitoring 
+Contributor : Riki
 """
 
 def disk_and_mem_check():
