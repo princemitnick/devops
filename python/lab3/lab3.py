@@ -1,3 +1,8 @@
+"""
+Author : Prince Stanley 
+Project : lab3
+"""
+
 import subprocess
 
 result = subprocess.run(["ls", "-l"], capture_output=True, text=True)
